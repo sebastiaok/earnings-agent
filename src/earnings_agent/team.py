@@ -34,6 +34,8 @@ def build_agents() -> dict[str, AgentDefinition]:
             prompt=(
                 "너는 데이터 수집 담당이다. finance 도구로 대상 종목의 시세, 재무, "
                 "최근 공시(실적 관련 우선), 뉴스를 수집해 사실만 구조화된 목록으로 정리하라. "
+                "재무는 get_financials를 연간(기본)과 분기(period='quarterly') 둘 다 호출해 "
+                "최근 분기 실적과 전년 동기 대비(YoY) 수치를 함께 수집하라. "
                 "의견·해석·전망을 덧붙이지 마라. 출처(도구·URL)를 항목마다 남겨라."
             ),
             tools=FINANCE_TOOLS,
